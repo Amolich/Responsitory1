@@ -1,6 +1,5 @@
 <template>
     <div id="sea_res">
-      <top_btn :text="'首页'"></top_btn>
         <Background></Background>
         <div class="out_sear">
             <search class="sea"></search>
@@ -17,7 +16,6 @@
     import search from "../components/search";
     import Background from "../components/background";
     import page_changer from "../components/page_changer";
-    import top_btn from '../components/top_btn'
     export default {
         name: "search_result",
         data()
@@ -29,7 +27,7 @@
                 each_page: 5
             };
         },
-        components: {book_view,search,Background,page_changer,top_btn},
+        components: {book_view,search,Background,page_changer},
         computed: {
 
         },

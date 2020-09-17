@@ -1,6 +1,5 @@
 <template>
     <div id="book_m">
-      <top_btn :text="'首页'"></top_btn>
         <Background></Background>
         <search></search>
         <book_mview :book="book"></book_mview>
@@ -11,10 +10,9 @@
     import Background from "../components/background";
     import search from "../components/search";
     import book_mview from "../components/book_mview";
-    import top_btn from '../components/top_btn'
     export default {
         name: "book_message",
-        components:{search,Background,book_mview,top_btn},
+        components:{search,Background,book_mview},
         data()
         {
             return {

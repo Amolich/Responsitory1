@@ -1,10 +1,12 @@
 
 <template>
-  <div id="wea" style="position:absolute;" @click="get_weather">
+  <div id="wea" @click="get_weather">
     <div id="dis" >
-      <div class="tag1"><span>{{city}}</span></div>
-      <div class="tag1"><span>{{wea.forecast[0].type}}</span></div>
-      <div class="tag1"><span>{{wea.forecast[0].low}}~{{wea.forecast[0].high}}</span></div>
+      <div class="tag1_box">
+        <div class="tag1"><span>{{city}}</span></div>
+        <div class="tag1"><span>{{wea.forecast[0].type}}</span></div>
+        <div class="tag1"><span>{{wea.forecast[0].low}}~{{wea.forecast[0].high}}</span></div>
+      </div>
       <div class="tag2">
         <div class="day" @click="gotowea" v-for="(item,i) in wea.forecast" :key = 'i'>
           <p>{{item.low}}~{{item.high}}</p>
@@ -86,41 +88,38 @@
 <style scoped lang="less">
   #wea
   {
+    background: transparent;
     #dis
     {
       width: 130px;
-      height: 50px;
-      background: white;
+      height: 80px;
+      background: transparent;
 
       position: relative;
 
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: flex-start;
+      /*display: flex;*/
+      /*flex-direction: row;*/
+      /*justify-content: center;*/
+      /*align-items: center;*/
 
       cursor: pointer;
-
-
       .tag2
       {
-        position: absolute; top: 24px; left: -150px;
+        position: relative; top: 80px; left: -250px;
         width: 400px; height: 140px;
         background: white;
         border: 1px solid skyblue;
         border-radius: 10px;
-        display: none;
-
-
+        visibility: hidden;
+        display:flex;
+        justify-content: center;
+        align-items: stretch;
         .day
         {
           font:normal 13px 黑体;
           color: #000ccc;
           margin: 20px 0;
           padding: 0 10px;
-
-          //  z-index: 2;
-
         }
         :hover
         {
@@ -130,14 +129,22 @@
       }
     }
 
+    .tag1_box
+    {
+      position: absolute;
+      top: 50%;
+
+      transform: translate(0,-50%);
+    }
     .tag1
     {
       font:normal normal 13px 黑体;
       color: blue;
-      display: flex;
-      flex: 1;
-      justify-content: center;
-      align-items: center;
+      display: inline-block;
+
+      /*flex: 1;*/
+      /*justify-content: center;*/
+      /*align-items: center;*/
     }
 
 
@@ -150,12 +157,13 @@
     {
       color: #ff0000;
     }
+    #dis:hover
+    {
 
+    }
     #dis:hover .tag2
     {
-      display:flex;
-      justify-content: center;
-      align-items: stretch;
+      visibility: visible;
       p
       {
         display:flex;

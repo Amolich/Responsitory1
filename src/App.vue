@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-
-      <router-view v-if="isRouterAlive"/>
+    <nav_bar></nav_bar>
+    <router-view v-if="isRouterAlive"/>
   </div>
 </template>
 
 <script>
 
-
+import nav_bar from './components/nav_bar'
 export default {
     name: 'App',
-    components: {
+    components: { nav_bar
     },
     provide(){
         return{

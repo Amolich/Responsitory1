@@ -1,10 +1,8 @@
 <template>
-    <div @click="test">
-      <top_btn :text="'首页'"></top_btn>
+    <div>
       <home__page_c  @page_change="page_change($event,page)"></home__page_c>
       <div v-if="this.page == 1">
         <Background></Background>
-        <Weather class ="wea"></Weather>
         <Search_home class="sea"></Search_home>
       </div>
       <div v-else>
@@ -15,14 +13,12 @@
 
 <script>
     import Background from "../components/background";
-    import Weather from "../components/weather";
     import Search_home from "../components/search_home";
     import home__page_c from '../components/admin/home__page_c'
     import mange_choser from '../components/admin/mange_choser'
-    import top_btn from '../components/top_btn'
     export default {
         name: "home",
-        components: {Search_home, Weather,Background,home__page_c,mange_choser,top_btn},
+        components: {Search_home,Background,home__page_c,mange_choser},
         data()
         {
           return {

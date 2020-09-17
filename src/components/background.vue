@@ -163,8 +163,18 @@
             points[0].x = e.clientX;
             points[0].y = e.clientY;
         })
+        window.onblur = function()
+        {
+          points[0].x = 10000;
+          points[0].y = 10000;
+        };
+      document.onmouseout = function()
+      {
+        points[0].x = 10000;
+        points[0].y = 10000;
+      };
 
-        setInterval(function (){
+      setInterval(function (){
             move(points,canvas)
         },25);
 

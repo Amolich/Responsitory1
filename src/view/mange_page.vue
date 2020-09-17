@@ -1,6 +1,5 @@
 <template>
   <div id="m_p">
-    <top_btn :text="'首页'"></top_btn>
     <search_edit :range="this.range" :word="this.word" @search_text_change="search_text_change"></search_edit>
     <mange :books="this.books" :page="this.page" @get_book="get_book($event)"></mange>
     <page_changer :command="this.pg_com"  :each_page="this.each_page" @page_change="page_change($event,page)"></page_changer>
@@ -11,10 +10,9 @@
   import mange from '../components/admin/mange'
   import page_changer from '../components/page_changer'
   import search_edit from '../components/admin/search_edit'
-  import top_btn from '../components/top_btn'
   export default {
     name: 'mange_page',
-    components:{mange,page_changer,search_edit,top_btn},
+    components:{mange,page_changer,search_edit},
     data()
     {
       return{

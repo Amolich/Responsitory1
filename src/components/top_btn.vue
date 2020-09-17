@@ -1,5 +1,5 @@
 <template>
-    <div id="home_btn" @click="go_home">
+    <div id="home_btn" @click="go_path">
       {{this.text}}
     </div>
 </template>
@@ -7,12 +7,12 @@
 <script>
   export default {
     name: 'home_btn',
-    props:['text'],
+    props:['text','path'],
     methods:
       {
-        go_home()
+        go_path()
         {
-          this.$router.push('/home');
+          this.$router.push(this.path);
         }
       }
   }
