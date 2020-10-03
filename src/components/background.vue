@@ -4,6 +4,7 @@
 
 
 <script>
+  import common from '../CommonFunction/common'
     function randomNum(minNum, maxNum)
     {
         switch (arguments.length) {
@@ -153,16 +154,17 @@
             }
     }
 
+
     function background_Init()
     {
         var canvas = document.getElementById('m_canvas');
 
         var points = allpoint_init();
-
-        document.addEventListener('mousemove', function(e) {
+        var _this = this;
+        document.addEventListener('mousemove', common.throttle(function(e) {
             points[0].x = e.clientX;
             points[0].y = e.clientY;
-        })
+        },10))
         window.onblur = function()
         {
           points[0].x = 10000;

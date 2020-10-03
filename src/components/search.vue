@@ -32,9 +32,9 @@
             async searchbut()
             {
             //    var _this = this;
-                this.searchtext = trim(this.searchtext);
-
-                if(isBlank(this.searchtext))
+              this.searchtext = trim(this.searchtext);
+              this.searchtext = this.common.filterXSS(this.searchtext);
+              if(isBlank(this.searchtext))
                 {
                     await this.$router.push('/blank');
                     await this.$router.push('/home');
