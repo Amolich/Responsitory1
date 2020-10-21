@@ -1,6 +1,6 @@
 <template>
     <div id = "user">
-      <div>{{this.user_name}}</div>
+      <div id="name">{{this.user_name}}</div>
     </div>
 </template>
 
@@ -20,5 +20,11 @@
 </script>
 
 <style scoped>
-
+  #user
+  {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 </style>
