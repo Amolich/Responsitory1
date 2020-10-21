@@ -2,6 +2,8 @@
 
 > A Vue.js project
 
+数字图书馆
+
 ## Build Setup
 
 ``` bash
